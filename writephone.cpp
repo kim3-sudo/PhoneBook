@@ -16,7 +16,7 @@
 #include <cppconn/prepared_statement.h>
 
 #define HOST "localhost"
-#define USER "skon"
+#define USER "kim3"
 #define DB "kim3"
 
 using namespace std;

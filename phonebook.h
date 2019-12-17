@@ -20,8 +20,8 @@
 
 #define HOST "localhost"
 #define USER "kim3 "
-#define DB "kim3phone"
-#define PASS "PhilanderChase"
+#define DB "kim3"
+#define PASS "S218189"
 
 using namespace std;
 

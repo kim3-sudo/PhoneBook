@@ -13,7 +13,7 @@ CFLAGS= -std=c++14  -Wno-deprecated-declarations
 
 RM= /bin/rm -f
 
-all: testphonebook phoneapp PutHTML PutCGI
+all: phonetest phoneapp PutHTML PutCGI
 
 phoneentry.o: phoneentry.cpp phoneentry.h
 	$(CC) -c $(CFLAGS) phoneentry.cpp
@@ -21,11 +21,11 @@ phoneentry.o: phoneentry.cpp phoneentry.h
 phonebook.o: phonebook.cpp phonebook.h
 	$(CC) -c $(CFLAGS) -I/usr/include/cppconn phonebook.cpp
 
-testphonebook.o: testphonebook.cpp phoneentry.h	phonebook.h
-	$(CC) -c $(CFLAGS) testphonebook.cpp
+phonetest.o: phonetest.cpp phoneentry.h	phonebook.h
+	$(CC) -c $(CFLAGS) phonetest.cpp
 
-testphonebook: testphonebook.o phonebook.o phoneentry.o
-	$(CC) testphonebook.o phonebook.o phoneentry.o -L/usr/lib -o testphonebook -L/usr/local/lib -lcgicc -lmysqlcppconn
+phonetest: phonetest.o phonebook.o phoneentry.o
+	$(CC) phonetest.o phonebook.o phoneentry.o -L/usr/lib -o phonetest -L/usr/local/lib -lcgicc -lmysqlcppconn
 
 phoneapp.o: phoneapp.cpp
 	$(CC) -c $(CFLAGS) phoneapp.cpp
@@ -35,7 +35,7 @@ phoneapp: phoneapp.o phonebook.o phoneentry.o
 
 PutCGI: phoneapp
 	chmod 757 phoneapp
-	cp phoneapp /usr/lib/cgi-bin/$(USER)_phoneappcomplete.cgi 
+	cp phoneapp /usr/lib/cgi-bin/$(USER)_phoneappcomplete.cgi
 
 	echo "Current contents of your cgi-bin directory: "
 	ls -l /usr/lib/cgi-bin/
@@ -50,4 +50,4 @@ PutHTML:
 	ls -l /var/www/html/class/ssd/$(USER)/PhoneAppComplete
 
 clean:
-	rm -f *.o  phoneapp testphonebook
+	rm -f *.o  phoneapp phonetest

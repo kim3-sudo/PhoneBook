@@ -41,9 +41,9 @@ PutCGI: phoneapp
 	ls -l /usr/lib/cgi-bin/
 
 PutHTML:
-	cp html/index.html /var/www/html/class/softdev/$(USER)/PhoneBook/html
-	cp html/script.js /var/www/html/class/softdev/$(USER)/PhoneBook/html
-	cp html/style.css /var/www/html/class/softdev/$(USER)/PhoneBook/html
+	cp html/index.html /var/www/html/class/softdev/$(USER)/PhoneBook
+	cp html/script.js /var/www/html/class/softdev/$(USER)/PhoneBook
+	cp html/style.css /var/www/html/class/softdev/$(USER)/PhoneBook
 
 
 	echo "Current contents of your HTML directory: "

@@ -50,4 +50,4 @@ PutHTML:
 	ls -l /var/www/html/class/softdev/$(USER)/PhoneBook/html
 
 clean:
-	rm -f $(OBJS) $(OUT)
+	rm -f *.o phonetest phoneapp

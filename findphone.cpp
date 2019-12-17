@@ -17,7 +17,7 @@
 
 #define HOST "localhost"
 #define USER "kim3"
-#define DB "PhoneAppDB"
+#define DB "Phonebook"
 
 using namespace std;
 //using namespace sql::mysql;

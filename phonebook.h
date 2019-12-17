@@ -13,14 +13,14 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
-#include "PhoneEntry.h"
+#include "phoneentry.h"
 
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
 #define HOST "localhost"
-#define USER "skon"
-#define DB "PhoneAppDB"
+#define USER "kim3 "
+#define DB "kim3phone"
 #define PASS "PhilanderChase"
 
 using namespace std;

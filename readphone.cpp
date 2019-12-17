@@ -17,7 +17,7 @@
 
 #define HOST "localhost"
 #define USER "kim3"
-#define DB "kim3phone"
+#define DB "kim3"
 
 using namespace std;
 //using namespace sql::mysql;

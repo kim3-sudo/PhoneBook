@@ -47,7 +47,7 @@ PutHTML:
 
 
 	echo "Current contents of your HTML directory: "
-	ls -l /var/www/html/class/ssd/$(USER)/PhoneBook/html
+	ls -l /var/www/html/class/softdev/$(USER)/PhoneBook/html
 
 clean:
 	rm -f *.o  phoneapp phonetest

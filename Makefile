@@ -13,41 +13,41 @@ CFLAGS= -std=c++14  -Wno-deprecated-declarations
 
 RM= /bin/rm -f
 
-all: TestPhoneBook phoneApp PutHTML PutCGI
+all: testphonebook phoneapp PutHTML PutCGI
 
-PhoneEntry.o: PhoneEntry.cpp PhoneEntry.h
-	$(CC) -c $(CFLAGS) PhoneEntry.cpp
+phoneentry.o: phoneentry.cpp phoneentry.h
+	$(CC) -c $(CFLAGS) phoneentry.cpp
 
-PhoneBook.o: PhoneBook.cpp PhoneBook.h
-	$(CC) -c $(CFLAGS) -I/usr/include/cppconn PhoneBook.cpp
+phonebook.o: phonebook.cpp phonebook.h
+	$(CC) -c $(CFLAGS) -I/usr/include/cppconn phonebook.cpp
 
-TestPhoneBook.o: TestPhoneBook.cpp PhoneEntry.h	PhoneBook.h
-	$(CC) -c $(CFLAGS) TestPhoneBook.cpp
+testphonebook.o: testphonebook.cpp phoneentry.h	phonebook.h
+	$(CC) -c $(CFLAGS) testphonebook.cpp
 
-TestPhoneBook: TestPhoneBook.o PhoneBook.o PhoneEntry.o
-	$(CC) TestPhoneBook.o PhoneBook.o PhoneEntry.o -L/usr/lib -o TestPhoneBook -L/usr/local/lib -lcgicc -lmysqlcppconn
+testphonebook: testphonebook.o phonebook.o phoneentry.o
+	$(CC) testphonebook.o phonebook.o phoneentry.o -L/usr/lib -o testphonebook -L/usr/local/lib -lcgicc -lmysqlcppconn
 
-phoneApp.o: phoneApp.cpp 
-	$(CC) -c $(CFLAGS) phoneApp.cpp
+phoneapp.o: phoneapp.cpp
+	$(CC) -c $(CFLAGS) phoneapp.cpp
 
-phoneApp: phoneApp.o PhoneBook.o PhoneEntry.o
-	$(CC) phoneApp.o PhoneBook.o PhoneEntry.o -o phoneApp -L/usr/local/lib -lcgicc -lmysqlcppconn
+phoneapp: phoneapp.o phonebook.o phoneentry.o
+	$(CC) phoneapp.o phonebook.o phoneentry.o -o phoneapp -L/usr/local/lib -lcgicc -lmysqlcppconn
 
-PutCGI: phoneApp
-	chmod 757 phoneApp
-	cp phoneApp /usr/lib/cgi-bin/$(USER)_phoneAppComplete.cgi 
+PutCGI: phoneapp
+	chmod 757 phoneapp
+	cp phoneapp /usr/lib/cgi-bin/$(USER)_phoneappcomplete.cgi 
 
 	echo "Current contents of your cgi-bin directory: "
 	ls -l /usr/lib/cgi-bin/
 
 PutHTML:
-	cp phoneApp.html /var/www/html/class/softdev/$(USER)/PhoneAppComplete
-	cp phoneApp.js /var/www/html/class/softdev/$(USER)/PhoneAppComplete
-	cp phoneApp.css /var/www/html/class/softdev/$(USER)/PhoneAppComplete
+	cp index.html /var/www/html/class/softdev/$(USER)/PhoneAppComplete
+	cp script.js /var/www/html/class/softdev/$(USER)/PhoneAppComplete
+	cp style.css /var/www/html/class/softdev/$(USER)/PhoneAppComplete
 
 
 	echo "Current contents of your HTML directory: "
 	ls -l /var/www/html/class/ssd/$(USER)/PhoneAppComplete
 
 clean:
-	rm -f *.o  phoneApp TestPhoneBook
+	rm -f *.o  phoneapp testphonebook

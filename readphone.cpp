@@ -16,8 +16,8 @@
 #include <cppconn/prepared_statement.h>
 
 #define HOST "localhost"
-#define USER "skon"
-#define DB "skon"
+#define USER "kim3"
+#define DB "kim3phone"
 
 using namespace std;
 //using namespace sql::mysql;

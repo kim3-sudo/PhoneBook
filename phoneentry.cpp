@@ -1,4 +1,4 @@
-#include "PhoneEntry.h"
+#include "phoneentry.h"
 
 PhoneEntry::PhoneEntry() {
 }

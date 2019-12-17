@@ -41,13 +41,13 @@ PutCGI: phoneapp
 	ls -l /usr/lib/cgi-bin/
 
 PutHTML:
-	cp index.html /var/www/html/class/softdev/$(USER)/PhoneAppComplete/html
-	cp script.js /var/www/html/class/softdev/$(USER)/PhoneAppComplete/html
-	cp style.css /var/www/html/class/softdev/$(USER)/PhoneAppComplete/html
+	cp index.html /var/www/html/class/softdev/$(USER)/PhoneBook/html
+	cp script.js /var/www/html/class/softdev/$(USER)/PhoneBook/html
+	cp style.css /var/www/html/class/softdev/$(USER)/PhoneBook/html
 
 
 	echo "Current contents of your HTML directory: "
-	ls -l /var/www/html/class/ssd/$(USER)/PhoneAppComplete
+	ls -l /var/www/html/class/ssd/$(USER)/PhoneBook/html
 
 clean:
 	rm -f *.o  phoneapp phonetest

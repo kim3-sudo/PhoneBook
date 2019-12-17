@@ -19,7 +19,7 @@
 #define PHONEBOOK_H
 
 #define HOST "localhost"
-#define USER "kim3 "
+#define USER "kim3"
 #define DB "kim3"
 #define PASS "S218189"
 
